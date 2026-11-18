@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #12181f;
+  --color-slate: #414b56;
+  --color-brand: #123a5e;
+  --color-brand-dark: #0a2540;
+  --color-accent: #a4262c;
+  --color-paper: #ffffff;
+  --color-mist: #f4f3f0;
+  --color-line: #d5d1c9;
+  --color-link: #0b4ea2;
+  --color-focus: #ffc72c;
+  --color-ok: #10693f;
+  --color-warn: #8a5a00;
+
+  --font-sans: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", "Hiragino Sans TC",
+    system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-card: 3px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 18px;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+  }
+
+  a {
+    color: var(--color-link);
+    text-underline-offset: 3px;
+  }
+
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: #ffe9a8;
+    color: var(--color-ink);
+  }
+
+  /* Native form control polish: keep them plain, like a government form. */
+  select,
+  input[type="radio"] {
+    font: inherit;
+  }
+
+  select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--color-slate) 50%),
+      linear-gradient(135deg, var(--color-slate) 50%, transparent 50%);
+    background-position:
+      calc(100% - 20px) calc(50% + 1px),
+      calc(100% - 14px) calc(50% + 1px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 44px;
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 1024px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  .wrap-narrow {
+    width: 100%;
+    max-width: 720px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  .prose-gov p + p {
+    margin-top: 14px;
+  }
+
+  .stack > * + * {
+    margin-top: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Selected answer row. Written as plain CSS because the Tailwind
+   `has-[:checked]:` utility did not survive the static export build. */
+.opt-row:has(> input:checked) {
+  background-color: #e9eff5;
+  box-shadow: inset 3px 0 0 0 #123a5e;
+}
