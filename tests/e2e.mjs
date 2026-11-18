@@ -35,6 +35,7 @@ const font = await page.evaluate(() => getComputedStyle(document.body).fontFamil
 check("stylesheet applied (body font from theme)", font.includes("Noto Sans"), font.slice(0, 28));
 const sheetCount = await page.evaluate(() => document.styleSheets.length);
 check("one stylesheet, no 404", sheetCount === 1, `sheets=${sheetCount}`);
+check("income options show a reference range", (await page.content()).includes("$15,000"));
 check("no console errors", consoleErrors.length === 0, consoleErrors.slice(0, 2).join(" | "));
 await page.screenshot({ path: `${SHOTS}/pw-01-home.png`, fullPage: true });
 

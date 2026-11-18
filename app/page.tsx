@@ -112,7 +112,9 @@ export default function Home() {
 
           <fieldset className={step}>
             <Legend n={3}>每月收入組別</Legend>
-            <p className="mb-4 ml-9 text-[15px] text-slate">不用填寫金額，只需要選一個組別。</p>
+            <p className="mb-4 ml-9 text-[15px] text-slate">
+              以家庭每月總收入計，不用填寫金額，只需要選最接近的一組。二人或以上家庭，人數愈多，同一收入愈可能合資格。
+            </p>
             <div className="ml-9 mt-1 grid border-t border-line">
               {incomes.map(([v, l]) => (
                 <Option key={v} name="income" value={v} label={l} />

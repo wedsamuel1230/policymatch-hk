@@ -27,10 +27,13 @@ export const HOUSEHOLD_LABELS: Record<Household, string> = {
   withElderly: "有長者同住",
 };
 
+// Bands are a rough grouping of total monthly household income, not a test.
+// The cut points sit near the household-income median so the three groups are
+// roughly equal in size; the tool never calculates an amount from them.
 export const INCOME_LABELS: Record<Income, string> = {
-  low: "低收入",
-  mid: "中等收入",
-  high: "較高收入",
+  low: "低收入（每月約 $15,000 以下）",
+  mid: "中等收入（每月約 $15,000 至 $40,000）",
+  high: "較高收入（每月約 $40,000 以上）",
 };
 
 export const HOUSING_LABELS: Record<Housing, string> = {
