@@ -51,7 +51,7 @@ step("3 Fill the five questions and submit");
 await page.locator('input[name="age"][value="70plus"]').check();
 await page.locator('input[name="household"][value="couple"]').check();
 await page.locator('input[name="income"][value="low"]').check();
-await page.locator('input[name="housing"][value="public"]').check();
+await page.locator('input[name="housing"][value="publicRent"]').check();
 await page.locator('input[name="carer"][value="yes"]').check();
 await page.selectOption('select[name="district"]', "kwunTong");
 await page.locator("button[type=submit]").click();
@@ -70,7 +70,7 @@ await page.screenshot({ path: `${SHOTS}/pw-03-results.png`, fullPage: true });
 
 // 4. boundary: 40-year-old family with children
 step("4 Boundary case (different answer set)");
-await page.goto(`${BASE}/results?age=55to64&household=withChildren&income=mid&housing=private&carer=no&district=shaTin`, { waitUntil: "networkidle" });
+await page.goto(`${BASE}/results?age=55to64&household=withChildren&income=mid&housing=privateRent&carer=no&district=shaTin`, { waitUntil: "networkidle" });
 const t2 = await page.locator("p:has-text('為你找到')").first().innerText();
 const m2 = Number(t2.match(/為你找到\s*(\d+)/)?.[1] ?? -1);
 check("family case returns a different set", m2 > 0 && m2 !== matched, `count=${m2}`);
@@ -116,6 +116,13 @@ check("selected row shows a visible state", outline !== "rgba(0, 0, 0, 0)", outl
 await page.keyboard.press("Tab");
 const focusTag = await page.evaluate(() => document.activeElement?.tagName + ":" + (document.activeElement?.getAttribute("name") || ""));
 check("tab moves focus onward", !focusTag.startsWith("BODY"), focusTag);
+
+// 8b. old links still work
+step("8b Legacy query values still resolve");
+await page.goto(`${BASE}/results?age=70plus&household=couple&income=low&housing=public&carer=yes&district=kwunTong`, { waitUntil: "networkidle" });
+check("old housing=public still matches public housing", (await page.content()).includes("公屋（租住）"));
+const legacyCount = Number((await page.locator("p:has-text('為你找到')").first().innerText()).match(/為你找到\s*(\d+)/)?.[1] ?? -1);
+check("legacy link returns the same count as the new one", legacyCount === matched, `count=${legacyCount}`);
 
 // 9. mobile
 step("9 Mobile viewport");

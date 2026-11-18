@@ -7,7 +7,7 @@ const base: Profile = {
   age: "70plus",
   household: "couple",
   income: "low",
-  housing: "public",
+  housing: "publicRent",
   carer: "yes",
   district: "kwunTong",
 };
@@ -38,7 +38,7 @@ test("an eligible household matches", () => {
 });
 
 test("a failing rule is reported, not hidden", () => {
-  const r = matchScheme({ ...base, age: "under55" }, voucher);
+  const r = matchScheme({ ...base, age: "40to54" }, voucher);
   assert.equal(r.matched, false);
   assert.equal(r.failures.length, 1);
   assert.match(r.failures[0], /年齡/);
@@ -72,7 +72,7 @@ test("a full query is complete and round-trips", () => {
     age: "70plus",
     household: "couple",
     income: "low",
-    housing: "public",
+    housing: "publicRent",
     carer: "yes",
     district: "kwunTong",
   };

@@ -11,7 +11,10 @@ import type {
 } from "./types";
 
 export const AGE_LABELS: Record<AgeBand, string> = {
-  under55: "55 歲以下",
+  under18: "18 歲以下",
+  "18to24": "18 至 24 歲",
+  "25to39": "25 至 39 歲",
+  "40to54": "40 至 54 歲",
   "55to64": "55 至 64 歲",
   "65to69": "65 至 69 歲",
   "70plus": "70 歲或以上",
@@ -31,8 +34,12 @@ export const INCOME_LABELS: Record<Income, string> = {
 };
 
 export const HOUSING_LABELS: Record<Housing, string> = {
-  public: "公共房屋",
-  private: "私人房屋",
+  publicRent: "公屋（租住）",
+  subsidisedOwner: "居屋／綠置居（自置）",
+  privateOwner: "私人樓宇（自置）",
+  privateRent: "私人樓宇（租住）",
+  village: "村屋",
+  interim: "過渡房屋／劏房／床位",
 };
 
 export const CARER_LABELS: Record<Carer, string> = {
@@ -98,10 +105,21 @@ export function matchAll(profile: Profile, schemes: Scheme[]): MatchResult[] {
     .sort((a, b) => Number(b.matched) - Number(a.matched) || a.scheme.zh.localeCompare(b.scheme.zh, "zh-Hant"));
 }
 
-const AGE_VALUES: AgeBand[] = ["under55", "55to64", "65to69", "70plus"];
+const AGE_VALUES: AgeBand[] = ["under18", "18to24", "25to39", "40to54", "55to64", "65to69", "70plus"];
 const HOUSEHOLD_VALUES: Household[] = ["single", "couple", "withChildren", "withElderly"];
 const INCOME_VALUES: Income[] = ["low", "mid", "high"];
-const HOUSING_VALUES: Housing[] = ["public", "private"];
+const HOUSING_VALUES: Housing[] = [
+  "publicRent",
+  "subsidisedOwner",
+  "privateOwner",
+  "privateRent",
+  "village",
+  "interim",
+];
+
+// Links created before the options were widened still work.
+const HOUSING_ALIASES: Record<string, Housing> = { public: "publicRent", private: "privateRent" };
+const AGE_ALIASES: Record<string, AgeBand> = { under55: "40to54" };
 const CARER_VALUES: Carer[] = ["yes", "no"];
 const DISTRICT_VALUES = Object.keys(DISTRICT_LABELS) as District[];
 
@@ -123,10 +141,12 @@ export function parseProfile(params: Record<string, string | string[] | undefine
   };
 
   const profile: Profile = {
-    age: pick(one("age"), AGE_VALUES, "65to69"),
+    age: AGE_ALIASES[one("age") as string] ?? pick(one("age"), AGE_VALUES, "65to69"),
     household: pick(one("household"), HOUSEHOLD_VALUES, "couple"),
     income: pick(one("income"), INCOME_VALUES, "low"),
-    housing: pick(one("housing"), HOUSING_VALUES, "public"),
+    housing:
+      HOUSING_ALIASES[one("housing") as string] ??
+      pick(one("housing"), HOUSING_VALUES, "publicRent"),
     carer: pick(one("carer"), CARER_VALUES, "no"),
     district: pick(one("district"), DISTRICT_VALUES, "kwunTong"),
   };

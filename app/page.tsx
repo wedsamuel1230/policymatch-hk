@@ -90,7 +90,9 @@ export default function Home() {
         >
           <fieldset className={step}>
             <Legend n={1}>年齡組別</Legend>
-            <p className="mb-4 ml-9 text-[15px] text-slate">請選擇最接近的一組。</p>
+            <p className="mb-4 ml-9 text-[15px] text-slate">
+              適合任何年齡。請選擇最接近的一組。
+            </p>
             <div className="ml-9 mt-1 grid border-t border-line">
               {ages.map(([v, l]) => (
                 <Option key={v} name="age" value={v} label={l} />
@@ -119,7 +121,10 @@ export default function Home() {
           </fieldset>
 
           <fieldset className={step}>
-            <Legend n={4}>住屋類型</Legend>
+            <Legend n={4}>居住情況</Legend>
+            <p className="mb-4 ml-9 text-[15px] text-slate">
+              請選擇你現時居住的房屋類別，以及你是租住還是自置。
+            </p>
             <div className="ml-9 mt-1 grid border-t border-line">
               {housings.map(([v, l]) => (
                 <Option key={v} name="housing" value={v} label={l} />

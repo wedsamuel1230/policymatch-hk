@@ -1,7 +1,22 @@
-export type AgeBand = "under55" | "55to64" | "65to69" | "70plus";
+export type AgeBand =
+  | "under18"
+  | "18to24"
+  | "25to39"
+  | "40to54"
+  | "55to64"
+  | "65to69"
+  | "70plus";
 export type Household = "single" | "couple" | "withChildren" | "withElderly";
 export type Income = "low" | "mid" | "high";
-export type Housing = "public" | "private";
+// Tenure, not just building type: several schemes care who the resident rents from
+// or whether the household already owns a subsidised flat.
+export type Housing =
+  | "publicRent"
+  | "subsidisedOwner"
+  | "privateOwner"
+  | "privateRent"
+  | "village"
+  | "interim";
 export type Carer = "yes" | "no";
 
 export type District =
