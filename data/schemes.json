@@ -12,10 +12,26 @@
       "dept": "社會福利署",
       "summary": "讓體弱長者在社區接受日間照顧、家居服務或復康訓練，服務由長者自己選擇。",
       "benefit": "以服務券形式直接資助，可按需要轉換服務單位。",
-      "documents": ["香港身份證", "統一評估結果", "住址證明"],
+      "documents": [
+        "香港身份證",
+        "統一評估結果",
+        "住址證明"
+      ],
       "apply": "先經統一評估，再由社工協助選擇服務單位。",
-      "citation": { "label": "施政報告2026 附篇 第7章 促進老有所養", "ref": "第7章" },
-      "rules": { "ageBands": ["65to69", "70plus"], "incomeBands": ["low", "mid"] }
+      "citation": {
+        "label": "施政報告2026 附篇 第7章，p.72",
+        "ref": "p.72"
+      },
+      "rules": {
+        "ageBands": [
+          "65to69",
+          "70plus"
+        ],
+        "incomeBands": [
+          "low",
+          "mid"
+        ]
+      }
     },
     {
       "id": "rcsv",
@@ -24,10 +40,25 @@
       "dept": "社會福利署",
       "summary": "為需要院舍照顧的長者提供資助，可選擇參與計劃的安老院舍。",
       "benefit": "按長者需要的照顧程度提供不同級別資助。",
-      "documents": ["香港身份證", "統一評估結果", "家庭狀況申報"],
+      "documents": [
+        "香港身份證",
+        "統一評估結果",
+        "家庭狀況申報"
+      ],
       "apply": "必須先完成統一評估，確認需要院舍照顧。",
-      "citation": { "label": "施政報告2026 附篇 第7章 促進老有所養", "ref": "第7章" },
-      "rules": { "ageBands": ["65to69", "70plus"], "carer": ["yes"] }
+      "citation": {
+        "label": "施政報告2026 附篇 第7章，p.72",
+        "ref": "p.72"
+      },
+      "rules": {
+        "ageBands": [
+          "65to69",
+          "70plus"
+        ],
+        "carer": [
+          "yes"
+        ]
+      }
     },
     {
       "id": "tech_loan",
@@ -36,10 +67,21 @@
       "dept": "勞工及福利局",
       "summary": "合資格機構可購置或租用樂齡科技產品，讓長者及殘疾人士借回家使用。",
       "benefit": "免費或以低價借用，例如扶抱器、防跌感應器、電動護理床。",
-      "documents": ["香港身份證", "機構轉介"],
+      "documents": [
+        "香港身份證",
+        "機構轉介"
+      ],
       "apply": "經安老或康復服務單位轉介。",
-      "citation": { "label": "施政報告2026 附篇 第7章，p.73", "ref": "p.73" },
-      "rules": { "ageBands": ["65to69", "70plus"] }
+      "citation": {
+        "label": "施政報告2026 附篇 第7章，p.73",
+        "ref": "p.73"
+      },
+      "rules": {
+        "ageBands": [
+          "65to69",
+          "70plus"
+        ]
+      }
     },
     {
       "id": "carer",
@@ -48,10 +90,21 @@
       "dept": "勞工及福利局",
       "summary": "為全職照顧家人的人提供情緒支援、照顧技巧訓練及短暫休息安排。",
       "benefit": "包括照顧者支援熱線、暫託服務及小組活動。",
-      "documents": ["香港身份證", "被照顧者的身份證明", "照顧關係申報"],
+      "documents": [
+        "香港身份證",
+        "被照顧者的身份證明",
+        "照顧關係申報"
+      ],
       "apply": "經綜合家庭服務中心或長者中心轉介。",
-      "citation": { "label": "施政報告2026 附篇 第7章，p.71", "ref": "p.71" },
-      "rules": { "carer": ["yes"] }
+      "citation": {
+        "label": "施政報告2026 附篇 第7章，p.71",
+        "ref": "p.71"
+      },
+      "rules": {
+        "carer": [
+          "yes"
+        ]
+      }
     },
     {
       "id": "oala",
@@ -60,10 +113,25 @@
       "dept": "社會福利署",
       "summary": "為收入及資產在限額內的長者提供每月現金津貼，補助生活開支。",
       "benefit": "按月發放，金額較高齡津貼為高。",
-      "documents": ["香港身份證", "入息證明", "資產申報"],
+      "documents": [
+        "香港身份證",
+        "入息證明",
+        "資產申報"
+      ],
       "apply": "填寫申請表，交社會福利署或經服務單位轉交。",
-      "citation": { "label": "社會福利署 公共福利金計劃", "ref": "部門須知" },
-      "rules": { "ageBands": ["65to69", "70plus"], "incomeBands": ["low"] }
+      "citation": {
+        "label": "社會福利署 公共福利金計劃",
+        "ref": "部門須知"
+      },
+      "rules": {
+        "ageBands": [
+          "65to69",
+          "70plus"
+        ],
+        "incomeBands": [
+          "low"
+        ]
+      }
     },
     {
       "id": "oaa",
@@ -72,10 +140,20 @@
       "dept": "社會福利署",
       "summary": "為七十歲或以上的香港居民提供每月津貼，不需要入息審查。",
       "benefit": "按月發放，金額固定。",
-      "documents": ["香港身份證", "住址證明"],
+      "documents": [
+        "香港身份證",
+        "住址證明"
+      ],
       "apply": "填寫申請表，交社會福利署或經服務單位轉交。",
-      "citation": { "label": "社會福利署 公共福利金計劃", "ref": "部門須知" },
-      "rules": { "ageBands": ["70plus"] }
+      "citation": {
+        "label": "社會福利署 公共福利金計劃",
+        "ref": "部門須知"
+      },
+      "rules": {
+        "ageBands": [
+          "70plus"
+        ]
+      }
     },
     {
       "id": "health_voucher",
@@ -84,10 +162,20 @@
       "dept": "醫務衞生局",
       "summary": "資助長者使用私營基層醫療服務，例如家庭醫生、牙科及視光服務。",
       "benefit": "每年發放固定金額，可累積使用。",
-      "documents": ["香港身份證"],
+      "documents": [
+        "香港身份證"
+      ],
       "apply": "不需要預先申請，登記後直接使用。",
-      "citation": { "label": "醫務衞生局 長者醫療券計劃", "ref": "部門須知" },
-      "rules": { "ageBands": ["65to69", "70plus"] }
+      "citation": {
+        "label": "施政報告2026 附篇 第7章，p.73",
+        "ref": "p.73"
+      },
+      "rules": {
+        "ageBands": [
+          "65to69",
+          "70plus"
+        ]
+      }
     },
     {
       "id": "wfa",
@@ -96,10 +184,26 @@
       "dept": "在職家庭及學生資助事務處",
       "summary": "為在職而收入較低的家庭提供津貼，有兒童的家庭可獲額外金額。",
       "benefit": "按工時及家庭人數計算，按月發放。",
-      "documents": ["香港身份證", "入息證明", "工作時數證明", "子女出生證明"],
+      "documents": [
+        "香港身份證",
+        "入息證明",
+        "工作時數證明",
+        "子女出生證明"
+      ],
       "apply": "網上或郵寄申請，需每年續期。",
-      "citation": { "label": "在職家庭及學生資助事務處", "ref": "部門須知" },
-      "rules": { "households": ["withChildren"], "incomeBands": ["low", "mid"] }
+      "citation": {
+        "label": "施政報告2026 附篇 第7章，p.71",
+        "ref": "p.71"
+      },
+      "rules": {
+        "households": [
+          "withChildren"
+        ],
+        "incomeBands": [
+          "low",
+          "mid"
+        ]
+      }
     },
     {
       "id": "student_finance",
@@ -108,10 +212,25 @@
       "dept": "在職家庭及學生資助事務處",
       "summary": "為有子女就讀的的家庭提供學費減免、書簿津貼及車船津貼。",
       "benefit": "按家庭入息審查結果發放。",
-      "documents": ["香港身份證", "入息證明", "學生在學證明"],
+      "documents": [
+        "香港身份證",
+        "入息證明",
+        "學生在學證明"
+      ],
       "apply": "每年九月前經學校或網上遞交。",
-      "citation": { "label": "在職家庭及學生資助事務處", "ref": "部門須知" },
-      "rules": { "households": ["withChildren"], "incomeBands": ["low", "mid"] }
+      "citation": {
+        "label": "在職家庭及學生資助事務處",
+        "ref": "部門須知"
+      },
+      "rules": {
+        "households": [
+          "withChildren"
+        ],
+        "incomeBands": [
+          "low",
+          "mid"
+        ]
+      }
     },
     {
       "id": "fare_subsidy",
@@ -120,10 +239,21 @@
       "dept": "運輸署",
       "summary": "每月公共交通開支超過指定水平，可獲三分之一的補貼。",
       "benefit": "每月自動計算，領取簡單。",
-      "documents": ["八達通號碼", "香港身份證"],
+      "documents": [
+        "八達通號碼",
+        "香港身份證"
+      ],
       "apply": "使用同一張八達通，每月到指定地點或應用程式領取。",
-      "citation": { "label": "運輸署 公共交通費用補貼計劃", "ref": "部門須知" },
-      "rules": { "incomeBands": ["low", "mid"] }
+      "citation": {
+        "label": "運輸署 公共交通費用補貼計劃",
+        "ref": "部門須知"
+      },
+      "rules": {
+        "incomeBands": [
+          "low",
+          "mid"
+        ]
+      }
     },
     {
       "id": "dhc",
@@ -132,9 +262,15 @@
       "dept": "醫務衞生局",
       "summary": "在社區提供健康風險評估、慢性病管理及護理協調，減少入院需要。",
       "benefit": "會員制，大部分基本服務免費。",
-      "documents": ["香港身份證", "住址證明"],
+      "documents": [
+        "香港身份證",
+        "住址證明"
+      ],
       "apply": "到所住地區的康健中心登記成為會員。",
-      "citation": { "label": "醫務衞生局 地區康健中心", "ref": "部門須知" },
+      "citation": {
+        "label": "施政報告2026 附篇 第7章，p.60",
+        "ref": "p.60"
+      },
       "rules": {}
     }
   ]

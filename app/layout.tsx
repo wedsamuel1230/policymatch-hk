@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "PolicyMatch HK — 政府服務配對（示範）",
   description:
-    "回答五條問題，找出你可能合資格申請的香港政府支援服務。學生專題示範，並非政府官方網站。",
+    "回答六條問題，找出你可能合資格申請的香港政府支援服務。學生專題示範，並非政府官方網站。",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -34,7 +34,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </span>
               <span className="text-[15px] text-[#c8d8e6]">政策配對</span>
             </Link>
-            <p className="text-[14px] text-[#c8d8e6]">五條問題 · 一份清單 · 附政策頁碼</p>
+            <nav className="flex items-center gap-5 text-[14px] text-[#c8d8e6]" aria-label="主要">
+              <span>六條問題 · 一份清單 · 附政策頁碼</span>
+              <Link href="/ask" className="border-b border-[#9fc3e0] pb-0.5 text-paper no-underline hover:border-paper">
+                問一句
+              </Link>
+            </nav>
           </div>
         </header>
 

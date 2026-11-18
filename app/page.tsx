@@ -65,7 +65,7 @@ export default function Home() {
             找出你可以申請的支援
           </h1>
           <p className="mt-5 max-w-[46ch] text-[19px] text-slate">
-            回答五條問題。系統會對照政策條文，列出你可能合資格而未申請的服務，
+            回答六條問題。系統會對照政策條文，列出你可能合資格而未申請的服務，
             並附上政策頁碼，方便你自行核對。
           </p>
           <p className="mt-7 max-w-[52ch] border-l-2 border-line pl-4 text-[15px] leading-relaxed text-slate">

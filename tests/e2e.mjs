@@ -125,6 +125,20 @@ check("old housing=public still matches public housing", (await page.content()).
 const legacyCount = Number((await page.locator("p:has-text('為你找到')").first().innerText()).match(/為你找到\s*(\d+)/)?.[1] ?? -1);
 check("legacy link returns the same count as the new one", legacyCount === matched, `count=${legacyCount}`);
 
+// 8c. ask page (retrieval)
+step("8c Ask page retrieves a cited passage");
+await page.goto(`${BASE}/ask/`, { waitUntil: "networkidle" });
+await page.fill("#q", "生果金要幾歲先有");
+await page.click('button[type=submit]');
+await page.waitForTimeout(300);
+const body = await page.content();
+check("a passage is returned", body.includes("高齡津貼"));
+check("the citation is shown", body.includes("出處：") && body.includes("查看完整條目"));
+await page.fill("#q", "zzz qqq 火星殖民");
+await page.click('button[type=submit]');
+await page.waitForTimeout(300);
+check("nonsense returns not-found, not a guess", (await page.content()).includes("找不到相關段落"));
+
 // 9. mobile
 step("9 Mobile viewport");
 await page.setViewportSize({ width: 390, height: 844 });

@@ -1,4 +1,4 @@
-import data from "@/data/schemes.json";
+import data from "../data/schemes.json";
 import type { Scheme } from "./types";
 
 export const schemes = data.schemes as Scheme[];
